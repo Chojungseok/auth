@@ -124,4 +124,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# django 기본 User가 아닌 custom된 User을 사용하기 위한 설정
 AUTH_USER_MODEL = 'accounts.User'
