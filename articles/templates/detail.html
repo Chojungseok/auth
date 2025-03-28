@@ -6,7 +6,7 @@
     <p>{{article.user}}</p>
 
     {% if user == article.user %}
-    <a href="">UpDate</a>
+    <a href="{% url 'articles:update' article.id %}">UpDate</a>
     <a href="{% url 'articles:delete' article.id %}">Delete</a>
     {% endif %}
     <hr>
