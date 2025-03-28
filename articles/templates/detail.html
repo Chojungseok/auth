@@ -10,4 +10,8 @@
         {{form}}
         <input type="submit">
     </form>
+    <hr>
+    {% for comment in article.comment_set.all %}
+        <li>{{comment.user.username}} - {{comment.content}}</li>
+    {% endfor %}
 {% endblock %}
