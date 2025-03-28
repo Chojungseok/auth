@@ -8,8 +8,9 @@
 </head>
 <body>
     <nav class="nav">
+        <a href="{% url 'articles:index' %}">Home</a>
         {% if user.is_authenticated %}
-            <a href="" class="nav-link disabled">{{user}}</a>
+            <a href="{% url 'accounts:profile' user.username %}" class="nav-link ">{{user}}</a>
             <a href="{% url 'accounts:logout' %}" class="nav-link">Logout</a>
             <a href="{% url 'articles:create' %}" class="nav-link">Create</a>
         {% else %}
