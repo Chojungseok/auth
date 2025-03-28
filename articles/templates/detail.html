@@ -13,5 +13,8 @@
     <hr>
     {% for comment in article.comment_set.all %}
         <li>{{comment.user.username}} - {{comment.content}}</li>
+        {% if comment.user == user %}
+            <a href="{% url 'articles:comment_delete' article.id comment.id %}">Delete</a>
+        {% endif %}
     {% endfor %}
 {% endblock %}
