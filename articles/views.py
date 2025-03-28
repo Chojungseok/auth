@@ -60,3 +60,11 @@ def comment_delete(request, article_id, comment_id):
     if request.user == comment.user:
         comment.delete()
     return redirect('articles:detail', id = article_id)
+
+
+@login_required
+def delete(request, id):
+    article = Article.objects.get(id = id)
+    if request.user == article.user:
+        article.delete()
+    return redirect('articles:index')
